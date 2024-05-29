@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GraphQL</title>
+</head>
+
+<body>
+    <div id="Login">
+        <form action="/home" method="POST">
+            <h2>Login Page</h2>
+
+            <% if (error) { %>
+                <div id="error" style="color: red;">
+                    <%= error %> </div>
+                    <% } %>
+
+
+                    <label for="username">Username or Email:</label>
+                    <input name="username" type="text" id="username" placeholder="Username or Email">
+
+                    <label for="password">Password:</label>
+                    <input name="password" type="" id="password" placeholder="Password">
+
+                    <button type="submit">Login</button>
+        </form>
+
+    </div>
+</body>
+
+</html>
