@@ -1,3 +1,83 @@
+
+/* Reset some default styles */
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'IBM Plex Mono', monospace;
+  height: 100%;
+}
+
+.page-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: var(--darkGrey);
+}
+
+.login-container {
+  background-color: var(--black);
+  padding: var(--px12);
+  border-radius: var(--px2);
+  box-shadow: 0px 0px 25px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-header {
+  font-size: 1.5rem;
+  color: var(--lightBlue3);
+  margin-bottom: var(--px4);
+}
+
+.error-message {
+  color: red;
+  margin-bottom: var(--px3);
+}
+
+.login-label {
+  display: block;
+  text-align: left;
+  margin-bottom: var(--px1);
+  color: var(--grey1);
+}
+
+.login-input {
+  width: 100%;
+  padding: var(--px2);
+  margin-bottom: var(--px4);
+  border: none;
+  border-radius: var(--px1);
+  background-color: var(--grey8);
+  color: var(--grey1);
+}
+
+.login-input::placeholder {
+  color: var(--grey4);
+}
+
+.login-button {
+  background-color: var(--lightBlue3);
+  color: var(--black);
+  border: none;
+  padding: var(--px3) var(--px4);
+  border-radius: var(--px1);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.login-button:hover {
+  background-color: var(--lightBlue5);
+}
+
+.welcome-container {
+  text-align: center;
+  margin-top: var(--px10);
+  color: var(--lightBlue3);
+  font-size: 1.25rem;
+}
+
 .active{
   display: flex;
   align-items: center;
@@ -34,7 +114,6 @@
   text-transform: capitalize;
 }
 .skills_grid{
-  width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;

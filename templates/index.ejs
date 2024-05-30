@@ -5,29 +5,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GraphQL</title>
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
-    <div id="Login">
-        <form action="/home" method="POST">
-            <h2>Login Page</h2>
+    <div class="page-container">
+        <div id="login" class="login-container">
+            <form action="/home" method="POST" class="login-form">
+                <h2 class="login-header">Login Page</h2>
 
-            <% if (error) { %>
-                <div id="error" style="color: red;">
-                    <%= error %> </div>
-                    <% } %>
+                <% if (error) { %>
+                <div id="error" class="error-message">
+                    <%= error %>
+                </div>
+                <% } %>
 
+                <label for="username" class="login-label">Username or Email:</label>
+                <input name="username" type="text" id="username" placeholder="Username or Email" class="login-input">
 
-                    <label for="username">Username or Email:</label>
-                    <input name="username" type="text" id="username" placeholder="Username or Email">
+                <label for="password" class="login-label">Password:</label>
+                <input name="password" type="password" id="password" placeholder="Password" class="login-input">
 
-                    <label for="password">Password:</label>
-                    <input name="password" type="" id="password" placeholder="Password">
-
-                    <button type="submit">Login</button>
-        </form>
-
+                <button type="submit" class="login-button">Login</button>
+            </form>
+        </div>
     </div>
+
 </body>
 
 </html>

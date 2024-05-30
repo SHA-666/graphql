@@ -5,21 +5,27 @@ fetch('/api/graphql')
 
     .then(res => res.json())
     .then(({ last_act, project_on, skils, data }) => {
+        let username = data.user[0].firstName;
+        let lastName = data.user[0].lastName;
+
+        const user = document.createElement("p")
+        user.className = "welcome-container"
+        user.innerHTML = `welcome ${username},${lastName}`
+
+        elem.appendChild(user)
+
         let lvl = data.user[0].events[0].level;
         displayLvl(lvl)
         let currentproject = project_on.group[0]
         lastAct(currentproject)
         let skills = skils.user[0].transactions;
+
         insertGraph(skills)
+
+
+
     })
     .catch(err => console.error("Error fetching data:", err));
-
-
-
-
-
-
-
 
 
 // add skills graph
@@ -108,8 +114,6 @@ function insertGraph(skils) {
     skills_info.innerHTML = svgdata;
     elem.appendChild(skills_info);
 }
-
-
 function rotate(M, O, angle) {
     var xM, yM, x, y;
     xM = M.x - O.x;
@@ -118,9 +122,6 @@ function rotate(M, O, angle) {
     y = - xM * Math.sin(angle) + yM * Math.cos(angle) + O.y;
     return ({ x: Math.round(x), y: Math.round(y) });
 }
-
-
-
 //display the activity working on
 function lastAct(currentproject) {
     let diff = new Date();
@@ -171,7 +172,6 @@ function displayLvl(lvl) {
     prof.appendChild(lvl_div);
     elem.appendChild(prof)
 }
-
 function getRank(level) {
     switch (level) {
         case level >= 60:
@@ -192,7 +192,6 @@ function getRank(level) {
             return "Aspiring developer";
     }
 }
-
 function nextRank(level) {
     switch (level) {
         case level >= 60:
